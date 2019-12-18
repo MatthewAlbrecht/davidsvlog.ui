@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
-import styles from './navigation.module.css'
 
 export default () => {
   const data = useStaticQuery(
@@ -25,11 +24,11 @@ export default () => {
 
   return (
     <nav role="navigation">
-      <ul className={styles.navigation}>
+      <ul>
         {navItems
           .map(item => item.node)
           .map(item => (
-            <li className={styles.navigationItem} key={item.slug}>
+            <li key={item.slug}>
               <Link to={'/' + item.slug}>{item.title}</Link>
             </li>
           ))}

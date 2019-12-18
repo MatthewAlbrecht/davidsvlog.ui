@@ -5,13 +5,13 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const episodeTemplate = path.resolve('./src/templates/episode.js')
     const memberTemplate = path.resolve('./src/templates/member.js')
     resolve(
       graphql(
         `
           {
-            allContentfulBlogPost {
+            allContentfulEpisode {
               edges {
                 node {
                   title
@@ -35,15 +35,15 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors)
           reject(result.errors)
         }
-        const posts = result.data.allContentfulBlogPost.edges
+        const episodes = result.data.allContentfulEpisode.edges
         const members = result.data.allContentfulCastMember.edges
 
-        posts.forEach((post, index) => {
+        episodes.forEach((episode, index) => {
           createPage({
-            path: `/blog/${post.node.slug}/`,
-            component: blogPost,
+            path: `/episode/${episode.node.slug}/`,
+            component: episodeTemplate,
             context: {
-              slug: post.node.slug,
+              slug: episode.node.slug,
             },
           })
         })
