@@ -28,6 +28,7 @@ body {
 
 .logo-vlog {
   color: $colorFlamingo;
+  font-weight: 200;
 }
 
 .mainNav {
@@ -67,7 +68,7 @@ body {
 }
 
 .secondaryNav-item {
-  padding: rhythm(1.5) 0;
+  padding: rhythm(1.5) rhythm(1);
 
   & + .secondaryNav-item {
     border-top: solid 0.1rem $colorGrey92;
