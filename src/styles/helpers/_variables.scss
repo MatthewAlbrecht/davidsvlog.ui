@@ -1,0 +1,70 @@
+// ---------------------------------------------
+//  GLOBAL VARIABLES
+// ---------------------------------------------
+
+// ----------------------
+//  VIEWPORT SIZES
+// ----------------------
+$breakpoints: (
+  md: 750px,
+  lg: 1024px,
+  xl: 1440px,
+) !default;
+
+// ----------------------
+//  COLORS
+// ----------------------
+$colorLightest: #ffffff;
+$colorDarkest: #000000;
+
+$colorGreyLightest: #eaeaea;
+$colorGreyLight: #d8d8d8;
+$colorGreyMedium: #999999;
+$colorGrey: #666666;
+$colorGreyDark: #181818;
+$colorGreyDarkest: #070707;
+
+$colorGreyBlueLight: #6d7278;
+$colorGreyBlue: #282c2f;
+
+$colorRed: #ed1c24;
+$colorRedDark: #c61017;
+
+// ----------------------
+//  FONTS
+// ----------------------
+
+$fontFamilyPrimary: 'Gotham', sans-serif;
+
+// ----------------------
+//  RHYTHM
+// ----------------------
+
+$rhythmBase: 8;
+
+// ----------------------
+//  EASING
+// ----------------------
+
+$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+// ----------------------
+//  Z-INDEX
+// ----------------------
+
+$zBackground: -1;
+$zHeader: 5;
+$zMain: 3;
+
+// ----------------------
+//  HEIGHTS / SIZES
+// ----------------------
+
+$footerHeight: rhythm(50);
+
+// ----------------------
+//  BORDER RADIUS
+// ----------------------
+
+$borderRadius: 1.4rem;
