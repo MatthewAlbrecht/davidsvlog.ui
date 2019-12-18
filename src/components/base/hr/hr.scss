@@ -1,0 +1,21 @@
+/* ---------------------------------------------
+ Horizant Rule
+--------------------------------------------- */
+
+.hr {
+  display: block;
+  height: 0.1rem;
+  width: 100%;
+}
+
+.hr_small {
+  width: rhythm(2);
+}
+
+.hr_colorRed {
+  background: $colorRed;
+}
+
+.hr_colorGrey {
+  background: $colorGrey;
+}

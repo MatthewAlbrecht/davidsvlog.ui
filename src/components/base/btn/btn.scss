@@ -1,0 +1,53 @@
+/* ---------------------------------------------
+ Btn
+ --
+ All variations of the design's button styles
+--------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  font-family: $fontFamilyPrimary;
+  text-transform: uppercase;
+  background-color: $colorGreyDark;
+  color: $colorLightest;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+  min-width: 12.8rem;
+  padding: 1.4rem rhythm(4) 1.5rem rhythm(4);
+  text-align: center;
+  transition: background-color 0.3s $easeOutQuad;
+  width: 100%;
+
+  &:active {
+    background-color: $colorGrey;
+  }
+
+  &:disabled {
+    background-color: $colorGreyLightest;
+    cursor: unset;
+  }
+}
+
+.btn_full {
+  width: 100% !important;
+}
+
+.btn_pill {
+  border-radius: rhythm(3);
+}
+
+@include breakpoint(breakpoint-size("md")) {
+  .btn {
+    width: auto;
+  }
+}
+
+@include breakpoint(breakpoint-size("lg")) {
+  .btn {
+    &:hover {
+      background-color: $colorGrey;
+    }
+  }
+}

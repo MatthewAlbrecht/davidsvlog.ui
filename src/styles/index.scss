@@ -20,3 +20,22 @@
 // ----------------------
 
 @import './utilities/display';
+
+// ----------------------
+// Base Components
+// ----------------------
+
+@import '../components/base/bgImage/bgImage';
+@import '../components/base/blocks/blocks';
+@import '../components/base/box/box';
+@import '../components/base/btn/btn';
+@import '../components/base/container/container';
+@import '../components/base/hList/hList';
+@import '../components/base/hr/hr';
+@import '../components/base/icon/icon';
+@import '../components/base/img/img';
+@import '../components/base/maxWidth/maxWidth';
+@import '../components/base/row/grid';
+@import '../components/base/tier/tier';
+@import '../components/base/txt/txt';
+@import '../components/base/vList/vList';

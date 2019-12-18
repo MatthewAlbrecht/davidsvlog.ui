@@ -1,0 +1,12 @@
+/* ---------------------------------------------
+ Container
+ --
+ A wrapping element contraining children to
+ designated site widths in a viewport
+--------------------------------------------- */
+
+.container {
+  margin: 0 auto;
+  padding: 0 rhythm(6);
+  width: 100%;
+}
