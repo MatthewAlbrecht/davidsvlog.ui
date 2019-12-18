@@ -98,40 +98,16 @@ $text-sizes: 10 12 13 14 16 18 20 24 26 32 38 40 50 80;
 // TXT COLORS
 // ------------------------------------
 
-.txt_colorLightest {
+.txt_colorWhite {
   color: $colorWhite;
-}
-
-.txt_colorGreyLight {
-  color: $colorGreyLight;
-}
-
-.txt_colorGrey {
-  color: $colorGrey;
-}
-
-.txt_colorGreyMedium {
-  color: $colorGreyMedium;
-}
-
-.txt_colorGreyDark {
-  color: $colorGreyDark;
 }
 
 .txt_colorBlack {
   color: $colorBlack;
 }
 
-.txt_colorGreyBlueLight {
-  color: $colorGreyBlueLight;
-}
-
-.txt_colorRed {
-  color: $colorRed;
-}
-
-.txt_colorRedDark {
-  color: $colorRedDark;
+.txt_colorSlate {
+  color: $colorSlate;
 }
 
 .txt_opaque {

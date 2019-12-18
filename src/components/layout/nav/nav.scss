@@ -1,5 +1,5 @@
 body {
-  background-color: $colorGrey92;
+  background-color: #eaf5f4;
 }
 
 .header {
@@ -39,10 +39,10 @@ body {
 
 .mainNav-link {
   font-size: 1.6rem;
-  color: $colorBlack;
+  color: $colorDarkTeal;
 
   &:hover {
-    color: $colorDarkTeal;
+    color: $colorDarkestTeal;
   }
 }
 
@@ -76,9 +76,9 @@ body {
 
 .secondaryNav-link {
   font-size: 1.2rem;
-  color: $colorBlack;
+  color: $colorDarkTeal;
 
   &:hover {
-    color: $colorDarkTeal;
+    color: $colorDarkestTeal;
   }
 }

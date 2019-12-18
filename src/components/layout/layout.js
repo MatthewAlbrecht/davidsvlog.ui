@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './layout/nav/nav'
+import Nav from './nav/nav'
 
 class Template extends React.Component {
   render() {
