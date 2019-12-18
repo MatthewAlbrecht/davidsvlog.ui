@@ -9,7 +9,7 @@
   font-family: $fontFamilyPrimary;
   text-transform: uppercase;
   background-color: $colorGreyDark;
-  color: $colorLightest;
+  color: $colorWhite;
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -38,13 +38,13 @@
   border-radius: rhythm(3);
 }
 
-@include breakpoint(breakpoint-size("md")) {
+@include breakpoint(breakpoint-size('md')) {
   .btn {
     width: auto;
   }
 }
 
-@include breakpoint(breakpoint-size("lg")) {
+@include breakpoint(breakpoint-size('lg')) {
   .btn {
     &:hover {
       background-color: $colorGrey;

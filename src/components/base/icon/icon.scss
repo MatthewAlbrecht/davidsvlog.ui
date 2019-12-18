@@ -33,7 +33,7 @@
   }
 
   .primaryFill {
-    fill: $colorLightest;
+    fill: $colorWhite;
     transition: fill 0.2s $easeOutQuad;
   }
 }
@@ -57,10 +57,10 @@
 
   &:hover {
     .primaryFill {
-      fill: $colorDarkest;
+      fill: $colorBlack;
     }
     .primaryStroke {
-      stroke: $colorDarkest;
+      stroke: $colorBlack;
     }
   }
 }

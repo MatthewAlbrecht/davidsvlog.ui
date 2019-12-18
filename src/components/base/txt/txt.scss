@@ -99,7 +99,7 @@ $text-sizes: 10 12 13 14 16 18 20 24 26 32 38 40 50 80;
 // ------------------------------------
 
 .txt_colorLightest {
-  color: $colorLightest;
+  color: $colorWhite;
 }
 
 .txt_colorGreyLight {
@@ -118,8 +118,8 @@ $text-sizes: 10 12 13 14 16 18 20 24 26 32 38 40 50 80;
   color: $colorGreyDark;
 }
 
-.txt_colorDarkest {
-  color: $colorDarkest;
+.txt_colorBlack {
+  color: $colorBlack;
 }
 
 .txt_colorGreyBlueLight {
