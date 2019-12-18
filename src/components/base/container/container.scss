@@ -7,6 +7,23 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 rhythm(6);
-  width: 100%;
+  max-width: 144rem;
+  width: 89%;
+}
+
+.container--show {
+  background-color: rgba(#ff1f1f, 0.15);
+}
+
+.container--fullHeight {
+  height: 100%;
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
 }

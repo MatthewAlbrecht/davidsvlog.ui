@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import images from 'utils/images'
+import images from 'src/utils/images'
 
 export default class Img extends Component {
   get images() {

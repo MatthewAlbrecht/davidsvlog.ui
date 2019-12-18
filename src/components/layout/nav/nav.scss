@@ -5,37 +5,80 @@ body {
 .header {
   background-color: $colorWhite;
   height: rhythm(8);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  position: relative;
+}
+
+.navBar {
+  width: 100%;
+  height: 100%;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 2.4rem;
+  font-weight: 500;
 }
 
 .logo-davids {
+  color: $colorTeal;
 }
 
 .logo-vlog {
-  font-weight: 200;
+  color: $colorFlamingo;
 }
 
-.nav {
+.mainNav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
 }
 
-.nav-link {
+.mainNav-link {
   font-size: 1.6rem;
   color: $colorBlack;
+
+  &:hover {
+    color: $colorDarkTeal;
+  }
 }
 
-.nav-item {
-  & + .nav-item {
-    padding-left: rhythm(3);
+.mainNav-item {
+  padding: rhythm(3) rhythm(2.5);
+  position: relative;
+
+  &:hover .secondaryNav {
+    display: block;
+  }
+}
+
+.secondaryNav {
+  background: $colorWhite;
+  bottom: 0;
+  display: none;
+  left: 50%;
+  padding: rhythm(1) rhythm(2.5);
+  position: absolute;
+  transform: translateY(100%) translateX(-50%);
+  width: 20rem;
+}
+
+.secondaryNav-item {
+  padding: rhythm(1.5) 0;
+
+  & + .secondaryNav-item {
+    border-top: solid 0.1rem $colorGrey92;
+  }
+}
+
+.secondaryNav-link {
+  font-size: 1.2rem;
+  color: $colorBlack;
+
+  &:hover {
+    color: $colorDarkTeal;
   }
 }

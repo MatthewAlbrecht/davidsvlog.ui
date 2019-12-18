@@ -8,7 +8,7 @@ export default function Container(props) {
       props.classes &&
       props.classes
         .split(' ')
-        .map(containerClass => `container_${containerClass}`)
+        .map(containerClass => `container--${containerClass}`)
     )
   }
 

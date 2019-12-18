@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import tags from './tags.json.js'
+import { Link } from 'gatsby'
+import tags from './tags.json'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
