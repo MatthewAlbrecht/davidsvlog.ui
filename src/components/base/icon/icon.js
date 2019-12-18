@@ -1,5 +1,5 @@
-import React from './node_modules/react'
-import classnames from './node_modules/classnames'
+import React from 'react'
+import classnames from 'classnames'
 
 import Info from './icons/info'
 import FooterSwoosh from './icons/footerSwoosh'

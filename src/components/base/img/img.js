@@ -1,6 +1,6 @@
-import React, { Component } from './node_modules/react'
-import classnames from './node_modules/classnames'
-import images from './node_modules/utils/images'
+import React, { Component } from 'react'
+import classnames from 'classnames'
+import images from 'utils/images'
 
 export default class Img extends Component {
   get images() {

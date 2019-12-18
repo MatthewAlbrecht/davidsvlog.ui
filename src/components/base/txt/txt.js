@@ -1,8 +1,8 @@
-import React, { Component } from './node_modules/react'
-import { Link } from './node_modules/react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import tags from './tags.json.js'
-import PropTypes from './node_modules/prop-types'
-import classnames from './node_modules/classnames'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 export default class Txt extends Component {
   static propTypes = {
