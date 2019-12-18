@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from './navigation'
+import Nav from './layout/nav/nav'
 
 class Template extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class Template extends React.Component {
 
     return (
       <>
-        <Navigation />
+        <Nav />
         {children}
       </>
     )

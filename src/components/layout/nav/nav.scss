@@ -1,0 +1,41 @@
+body {
+  background-color: $colorGrey92;
+}
+
+.header {
+  background-color: $colorWhite;
+  height: rhythm(8);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.4rem;
+}
+
+.logo-davids {
+}
+
+.logo-vlog {
+  font-weight: 200;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  color: $colorBlack;
+}
+
+.nav-item {
+  & + .nav-item {
+    padding-left: rhythm(3);
+  }
+}
