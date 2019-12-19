@@ -23,11 +23,11 @@ class EpisdoeTemplate extends React.Component {
           <Helmet title={`${episode.number} | ${siteTitle}`} />
           <Box classes="flats5">
             <Txt
-              classes="tertiary"
               tag="h2"
               size="44"
               color="Slate"
               content={`${episode.number}.`}
+              tertiary
             />
           </Box>
           <Box classes="bottom_5">
