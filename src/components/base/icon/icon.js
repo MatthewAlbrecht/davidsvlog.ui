@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 import Cheeseburger from './icons/cheeseburger'
 import Hamburger from './icons/hamburger'
+import Location from './icons/location'
 
 export default function Icon(props) {
   function getClasses() {
@@ -19,6 +20,7 @@ export default function Icon(props) {
   const iconMap = {
     cheeseburger: <Cheeseburger />,
     hamburger: <Hamburger />,
+    location: <Location />,
   }
 
   return <i className={getClassName()}>{iconMap[props.type]}</i>

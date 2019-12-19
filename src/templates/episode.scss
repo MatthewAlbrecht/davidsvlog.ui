@@ -1,15 +1,23 @@
-.episode-type {
-  padding: rhythm(0.5) rhythm(2);
-  background-color: rgba($colorFlamingo, 0.25);
+.episode-tag {
   border-radius: 1rem;
+  color: $colorDarkSlate;
   display: inline-block;
-  text-transform: lowercase;
-  margin-right: rhythm(1);
   margin-bottom: rhythm(1);
+  margin-right: rhythm(1);
+  padding: rhythm(0.5) rhythm(2);
+  text-transform: lowercase;
 
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.episode-tag--type {
+  background-color: rgba($colorBabyBlue, 0.25);
+}
+
+.episode-tag--location {
+  background-color: rgba($colorPastelGreen, 0.25);
 }
 
 .episode-videoContainer {
@@ -20,11 +28,28 @@
 }
 
 .episode-video {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
   width: 100%;
+}
+
+.episode-locationIcon {
+  margin-right: rhythm(0.5);
+  top: 0.1rem;
+  .primaryFill {
+    fill: $colorSlate;
+  }
+}
+
+.episode-featuring {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-rows: min-content;
+  row-gap: rhythm(4);
+  column-gap: rhythm(4);
 }
 
 @include breakpoint(breakpoint_size('md')) {
