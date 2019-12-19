@@ -5,7 +5,8 @@ import get from 'lodash/get'
 import Layout from 'src/components/layout/layout'
 import TagList from 'src/components/feature/tagList/tagList'
 import Featuring from 'src/components/feature/featuring/featuring'
-import { Txt, Container, Box, Icon, Hr, Img } from 'src/components/base/base'
+import EpisodeDescription from 'src/components/feature/episodeDescription/episodeDescription'
+import { Txt, Container, Box } from 'src/components/base/base'
 
 class EpisdoeTemplate extends React.Component {
   render() {
@@ -15,28 +16,23 @@ class EpisdoeTemplate extends React.Component {
     const people = get(this.props, 'data.contentfulEpisode.people')
     const sponsor = get(this.props, 'data.contentfulEpisode.sponsor')
     const releaseDate = get(this.props, 'data.contentfulEpisode.releaseDate')
+    const descriptionObject = get(
+      this.props,
+      'data.contentfulEpisode.childContentfulEpisodeSummaryTextNode.childMarkdownRemark.htmlAst'
+    )
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <Layout location={this.props.location}>
         <Container>
           <Helmet title={`${episode.number} | ${siteTitle}`} />
-          <Box classes="flats5">
-            <Txt
-              tag="h2"
-              size="44"
-              color="Slate"
-              content={`${episode.number}.`}
-              tertiary
-            />
-          </Box>
-          <Box classes="bottom_5">
+          <Box classes="top4 bottom_5">
             <Txt
               tag="span"
               size="10"
               space="25"
               color="LightSlate"
-              content={releaseDate}
+              content={`Episode ${episode.number} | ${releaseDate}`}
               uppercase
               semibold
             />
@@ -48,24 +44,41 @@ class EpisdoeTemplate extends React.Component {
             semibold
             content={episode.title}
           />
-          <Box classes="top2 bottom5">
+          <Box classes="top2 bottom4">
             <TagList tags={episodeTypes} name="type" />
             <TagList tags={locations} name="location" iconType="location" />
             <TagList tags={sponsor} name="sponsor" iconType="dollarSign" />
           </Box>
-          <div className="episode-videoContainer">
-            <iframe
-              className="episode-video"
-              src="https://www.youtube-nocookie.com/embed/brQEnKsMvB0"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <Box classes="top4">
+        </Container>
+        <div className="episode-videoContainer">
+          <Box classes="flats5">
+            <Container>
+              <div className="episode-videoAspectRatioContainer">
+                <iframe
+                  className="episode-video"
+                  src="https://www.youtube-nocookie.com/embed/brQEnKsMvB0"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </Container>
+          </Box>
+        </div>
+        <Container>
+          <Box classes="flats6">
             <Featuring people={people} />
           </Box>
         </Container>
+        {descriptionObject && (
+          <div className="episode-description">
+            <Box classes="flats8">
+              <Container>
+                <EpisodeDescription data={descriptionObject} />
+              </Container>
+            </Box>
+          </div>
+        )}
       </Layout>
     )
   }
@@ -93,6 +106,11 @@ export const pageQuery = graphql`
         nickname
         lastName
         slug
+      }
+      childContentfulEpisodeSummaryTextNode {
+        childMarkdownRemark {
+          htmlAst
+        }
       }
     }
   }

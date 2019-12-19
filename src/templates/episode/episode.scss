@@ -1,4 +1,8 @@
 .episode-videoContainer {
+  background-color: rgba($colorSlate, 0.1);
+}
+
+.episode-videoAspectRatioContainer {
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -11,6 +15,10 @@
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.episode-description {
+  background-color: $colorWhite;
 }
 
 @include breakpoint(breakpoint_size('md')) {
