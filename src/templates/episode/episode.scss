@@ -20,6 +20,10 @@
   background-color: rgba($colorPastelGreen, 0.25);
 }
 
+.episode-tag--sponsor {
+  background-color: rgba($colorLightKhaki, 0.25);
+}
+
 .episode-videoContainer {
   height: 0;
   overflow: hidden;
@@ -35,7 +39,8 @@
   width: 100%;
 }
 
-.episode-locationIcon {
+.episode-locationIcon,
+.episode-sponsorIcon {
   margin-right: rhythm(0.5);
   top: 0.1rem;
   .primaryFill {

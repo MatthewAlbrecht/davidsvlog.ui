@@ -11,6 +11,8 @@ class EpisdoeTemplate extends React.Component {
     const episodeTypes = get(this.props, 'data.contentfulEpisode.episodeTypes')
     const locations = get(this.props, 'data.contentfulEpisode.locations')
     const people = get(this.props, 'data.contentfulEpisode.people')
+    const sponsor = get(this.props, 'data.contentfulEpisode.sponsor')
+    const releaseDate = get(this.props, 'data.contentfulEpisode.releaseDate')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -24,6 +26,16 @@ class EpisdoeTemplate extends React.Component {
               size="44"
               color="Slate"
               content={`${episode.number}.`}
+            />
+          </Box>
+          <Box classes="bottom_5">
+            <Txt
+              tag="span"
+              size="10"
+              space="15"
+              color="Slate"
+              content={releaseDate}
+              uppercase
             />
           </Box>
           <Txt tag="h1" size="22" color="Slate" content={episode.title} />
@@ -49,6 +61,22 @@ class EpisdoeTemplate extends React.Component {
                 <Icon
                   className="episode-locationIcon"
                   type="location"
+                  classes="10"
+                />
+                {type}
+              </Txt>
+            ))}
+            {sponsor.map(type => (
+              <Txt
+                className="episode-tag episode-tag--sponsor"
+                tag="span"
+                size="10"
+                color="slate"
+                key={type}
+              >
+                <Icon
+                  className="episode-sponsorIcon"
+                  type="dollarSign"
                   classes="10"
                 />
                 {type}
@@ -122,6 +150,8 @@ export const pageQuery = graphql`
       link
       episodeTypes
       locations
+      sponsor
+      releaseDate(formatString: "MMMM DD, YYYY")
       people {
         firstName
         nickname
