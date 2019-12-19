@@ -6,7 +6,6 @@ const EpisodeDescription = props => {
   const paragraphComponents = props.data.children
     .filter(child => child.type === 'element')
     .map(createParagraphComponent)
-  console.log(paragraphComponents)
 
   function createParagraphComponent(data, i) {
     // console.log(data)
