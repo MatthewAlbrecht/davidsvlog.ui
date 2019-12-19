@@ -1,0 +1,20 @@
+.episodeDescription-paragraph {
+  color: $colorSlate;
+  line-height: 1.2;
+}
+
+.episodeDescription-paragraph + .episodeDescription-paragraph {
+  padding-top: rhythm(2);
+}
+
+.episodeDescription-link {
+  color: $colorLinkBlue;
+
+  &:hover {
+    background: linear-gradient(to right, $colorHoverOrange, $colorHoverPurple);
+    text-decoration: underline;
+    text-decoration-color: $colorGrey80;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

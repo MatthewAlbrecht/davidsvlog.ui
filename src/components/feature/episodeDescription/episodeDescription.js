@@ -1,0 +1,51 @@
+import React from 'react'
+import { Txt, Hr, Box } from 'src/components/base/base'
+import EpisodeHeading from '../episodeHeading/episodeHeading'
+
+const EpisodeDescription = props => {
+  const paragraphComponents = props.data.children
+    .filter(child => child.type === 'element')
+    .map(createParagraphComponent)
+  console.log(paragraphComponents)
+
+  function createParagraphComponent(data, i) {
+    // console.log(data)
+    return (
+      <p className="episodeDescription-paragraph" key={i}>
+        {data.children.map(childData => {
+          // console.log(childData)
+          switch (childData.type) {
+            case 'text':
+              return childData.value
+              break
+            case 'element':
+              return (
+                <a
+                  className="episodeDescription-link"
+                  href={childData.properties.href}
+                  key={childData.properties.href}
+                >
+                  {childData.children
+                    .map(grandChild => grandChild.value)
+                    .join(' ')}
+                </a>
+              )
+              break
+
+            default:
+              break
+          }
+          return ''
+        })}
+      </p>
+    )
+  }
+  return (
+    <div>
+      <EpisodeHeading title="Episode Synopsis" />
+      {paragraphComponents}
+    </div>
+  )
+}
+
+export default EpisodeDescription

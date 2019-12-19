@@ -63,6 +63,8 @@ export default class Txt extends Component {
       btn,
       strike,
       italic,
+      secondary,
+      tertiary,
     } = this.props
 
     return classnames(
@@ -80,7 +82,9 @@ export default class Txt extends Component {
       { txt_light: light },
       { txt_semibold: semibold },
       { txt_bold: bold },
-      { txt_strike: strike }
+      { txt_strike: strike },
+      { txt_secondary: secondary },
+      { txt_tertiary: tertiary }
     )
   }
 

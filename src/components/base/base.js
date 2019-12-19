@@ -1,4 +1,4 @@
-export { default as BgImage } from './bgImage/bgImage'
+export { default as BgImage } from './bgImage/bgimage'
 export { default as Blocks } from './blocks/blocks'
 export { default as Box } from './box/box'
 export { default as Btn } from './btn/btn'

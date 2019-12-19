@@ -1,4 +1,4 @@
-.episode-tag {
+.tag {
   border-radius: 1rem;
   color: $colorDarkSlate;
   display: inline-block;
@@ -12,44 +12,26 @@
   }
 }
 
-.episode-tag--type {
+.tag--type {
   background-color: rgba($colorBabyBlue, 0.25);
 }
 
-.episode-tag--location {
+.tag--location {
   background-color: rgba($colorPastelGreen, 0.25);
 }
 
-.episode-videoContainer {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
+.tag--sponsor {
+  background-color: rgba($colorLightKhaki, 0.25);
 }
 
-.episode-video {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.episode-locationIcon {
+.tag-locationIcon,
+.tag-sponsorIcon {
   margin-right: rhythm(0.5);
   top: 0.1rem;
+
   .primaryFill {
     fill: $colorSlate;
   }
-}
-
-.episode-featuring {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-auto-rows: min-content;
-  row-gap: rhythm(4);
-  column-gap: rhythm(4);
 }
 
 @include breakpoint(breakpoint_size('md')) {

@@ -1,0 +1,17 @@
+.personList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-rows: min-content;
+  row-gap: rhythm(4);
+  column-gap: rhythm(4);
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
+}

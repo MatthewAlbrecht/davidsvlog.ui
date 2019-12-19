@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import Cheeseburger from './icons/cheeseburger'
 import Hamburger from './icons/hamburger'
 import Location from './icons/location'
+import DollarSign from './icons/dollarSign'
 
 export default function Icon(props) {
   function getClasses() {
@@ -21,6 +22,7 @@ export default function Icon(props) {
     cheeseburger: <Cheeseburger />,
     hamburger: <Hamburger />,
     location: <Location />,
+    dollarSign: <DollarSign />,
   }
 
   return <i className={getClassName()}>{iconMap[props.type]}</i>

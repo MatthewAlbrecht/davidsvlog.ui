@@ -50,4 +50,12 @@
 // Template Components
 // ----------------------
 
-@import '../templates/episode';
+@import '../templates/episode/episode';
+
+// ----------------------
+// Feature Components
+// ----------------------
+
+@import '../components/feature/tagList/tagList';
+@import '../components/feature/personList/personList';
+@import '../components/feature/episodeDescription/episodeDescription';
