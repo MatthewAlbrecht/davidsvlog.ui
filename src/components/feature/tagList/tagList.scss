@@ -1,0 +1,44 @@
+.tag {
+  border-radius: 1rem;
+  color: $colorDarkSlate;
+  display: inline-block;
+  margin-bottom: rhythm(1);
+  margin-right: rhythm(1);
+  padding: rhythm(0.5) rhythm(2);
+  text-transform: lowercase;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.tag--type {
+  background-color: rgba($colorBabyBlue, 0.25);
+}
+
+.tag--location {
+  background-color: rgba($colorPastelGreen, 0.25);
+}
+
+.tag--sponsor {
+  background-color: rgba($colorLightKhaki, 0.25);
+}
+
+.tag-locationIcon,
+.tag-sponsorIcon {
+  margin-right: rhythm(0.5);
+  top: 0.1rem;
+
+  .primaryFill {
+    fill: $colorSlate;
+  }
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
+}

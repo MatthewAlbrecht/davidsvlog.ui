@@ -114,6 +114,10 @@ $text-sizes: 10 12 13 14 16 18 20 22 24 26 32 38 40 44 50 80;
   letter-spacing: 0.15rem;
 }
 
+.txt_space25 {
+  letter-spacing: 0.15rem;
+}
+
 // ------------------------------------
 // TXT COLORS
 // ------------------------------------
@@ -124,6 +128,10 @@ $text-sizes: 10 12 13 14 16 18 20 22 24 26 32 38 40 44 50 80;
 
 .txt_colorBlack {
   color: $colorBlack;
+}
+
+.txt_colorLightSlate {
+  color: $colorLightSlate;
 }
 
 .txt_colorSlate {

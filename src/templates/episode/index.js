@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Layout from 'src/components/layout/layout'
+import TagList from 'src/components/feature/tagList/tagList'
+import Featuring from 'src/components/feature/featuring/featuring'
 import { Txt, Container, Box, Icon, Hr, Img } from 'src/components/base/base'
 
 class EpisdoeTemplate extends React.Component {
@@ -32,56 +34,24 @@ class EpisdoeTemplate extends React.Component {
             <Txt
               tag="span"
               size="10"
-              space="15"
-              color="Slate"
+              space="25"
+              color="LightSlate"
               content={releaseDate}
               uppercase
+              semibold
             />
           </Box>
-          <Txt tag="h1" size="22" color="Slate" content={episode.title} />
-          <Box classes="top1 bottom5">
-            {episodeTypes.map(type => (
-              <Txt
-                className="episode-tag episode-tag--type"
-                tag="span"
-                size="10"
-                color="slate"
-                content={type}
-                key={type}
-              />
-            ))}
-            {locations.map(type => (
-              <Txt
-                className="episode-tag episode-tag--location"
-                tag="span"
-                size="10"
-                color="slate"
-                key={type}
-              >
-                <Icon
-                  className="episode-locationIcon"
-                  type="location"
-                  classes="10"
-                />
-                {type}
-              </Txt>
-            ))}
-            {sponsor.map(type => (
-              <Txt
-                className="episode-tag episode-tag--sponsor"
-                tag="span"
-                size="10"
-                color="slate"
-                key={type}
-              >
-                <Icon
-                  className="episode-sponsorIcon"
-                  type="dollarSign"
-                  classes="10"
-                />
-                {type}
-              </Txt>
-            ))}
+          <Txt
+            tag="h1"
+            size="22"
+            color="Slate"
+            semibold
+            content={episode.title}
+          />
+          <Box classes="top2 bottom5">
+            <TagList tags={episodeTypes} name="type" />
+            <TagList tags={locations} name="location" iconType="location" />
+            <TagList tags={sponsor} name="sponsor" iconType="dollarSign" />
           </Box>
           <div className="episode-videoContainer">
             <iframe
@@ -93,41 +63,7 @@ class EpisdoeTemplate extends React.Component {
             ></iframe>
           </div>
           <Box classes="top4">
-            <Txt
-              classes="center"
-              tag="h3"
-              size="14"
-              space="15"
-              color="Slate"
-              content="Featuring"
-              italic
-              semibold
-              uppercase
-            />
-            <Box classes="top1">
-              <Box classes="bottom5">
-                <Hr color="Flamingo" size="small" classes="center"></Hr>
-              </Box>
-              <div className="episode-featuring">
-                {people.map(person => (
-                  <div key={person.slug}>
-                    <Box classes="bottom2">
-                      <Img name="user" />
-                    </Box>
-                    <Txt
-                      tag="p"
-                      size="14"
-                      color="Slate"
-                      classes="center"
-                      content={
-                        person.nickname ||
-                        `${person.firstName} ${person.lastName || ''}`
-                      }
-                    />
-                  </div>
-                ))}
-              </div>
-            </Box>
+            <Featuring people={people} />
           </Box>
         </Container>
       </Layout>
