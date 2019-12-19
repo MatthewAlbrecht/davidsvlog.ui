@@ -5,7 +5,6 @@ body {
 .header {
   background-color: $colorWhite;
   height: rhythm(8);
-  position: relative;
 }
 
 .navBar {
@@ -14,7 +13,8 @@ body {
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 }
 
 .logo {
@@ -32,10 +32,10 @@ body {
 }
 
 .mainNav {
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
+  display: none;
   flex-direction: row;
+  justify-content: flex-start;
 }
 
 .mainNav-link {
@@ -82,4 +82,55 @@ body {
   &:hover {
     color: $colorDarkestTeal;
   }
+}
+
+.hamburgerMenu {
+  position: absolute;
+  right: 0;
+}
+
+.hamburgerMenu-button {
+  &:hover {
+    .hamburgerMenu-icon {
+      display: none;
+    }
+
+    .hamburgerMenu-activeIcon {
+      display: inline-block;
+    }
+  }
+}
+
+.hamburgerMenu-activeIcon {
+  display: none;
+}
+
+.hamburgerMenu-icon,
+.hamburgerMenu-activeIcon {
+  .primaryFill {
+    fill: $colorTeal;
+  }
+  &:active .primaryFill {
+    fill: $colorFlamingo;
+  }
+}
+
+@include breakpoint(breakpoint_size('md')) {
+  .navBar {
+    justify-content: space-between;
+  }
+
+  .mainNav {
+    display: flex;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
 }

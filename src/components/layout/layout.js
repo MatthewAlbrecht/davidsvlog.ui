@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Nav from './nav/nav'
 
 class Template extends React.Component {
@@ -12,6 +13,12 @@ class Template extends React.Component {
 
     return (
       <>
+        <Helmet>
+          <link
+            rel="stylesheet"
+            href="https://use.typekit.net/jdb0mpf.css"
+          ></link>
+        </Helmet>
         <Nav />
         {children}
       </>

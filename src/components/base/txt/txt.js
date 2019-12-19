@@ -12,6 +12,13 @@ export default class Txt extends Component {
     tag: PropTypes.oneOf(tags),
   }
 
+  get classes() {
+    return (
+      this.props.classes &&
+      this.props.classes.split(' ').map(className => `txt_${className}`)
+    )
+  }
+
   get sizeClasses() {
     return (
       this.props.size && this.props.size.split(' ').map(size => `txt_${size}`)
@@ -51,6 +58,7 @@ export default class Txt extends Component {
 
     return classnames(
       btn ? 'btn' : 'txt',
+      this.classes,
       this.sizeClasses,
       this.colorClasses,
       this.lineClasses,

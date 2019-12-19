@@ -13,7 +13,7 @@
 // TXT SIZES
 // ------------------------------------
 
-$text-sizes: 10 12 13 14 16 18 20 24 26 32 38 40 50 80;
+$text-sizes: 10 12 13 14 16 18 20 22 24 26 32 38 40 44 50 80;
 
 @mixin createTextSizes($resolution: '') {
   @each $text-size in $text-sizes {
@@ -24,6 +24,14 @@ $text-sizes: 10 12 13 14 16 18 20 24 26 32 38 40 50 80;
 }
 
 @include createTextSizes();
+
+// ------------------------------------
+// TXT FONT FAMILY
+// ------------------------------------
+
+.txt_tertiary {
+  font-family: $fontFamilyOutline;
+}
 
 // ------------------------------------
 // TXT DISPLAYS

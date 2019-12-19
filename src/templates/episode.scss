@@ -1,0 +1,37 @@
+.episode-type {
+  padding: rhythm(0.5) rhythm(2);
+  background-color: rgba($colorFlamingo, 0.25);
+  border-radius: 1rem;
+  display: inline-block;
+  text-transform: lowercase;
+  margin-right: rhythm(1);
+  margin-bottom: rhythm(1);
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.episode-videoContainer {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.episode-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
+}

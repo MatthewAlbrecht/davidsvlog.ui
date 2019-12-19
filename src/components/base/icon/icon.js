@@ -1,9 +1,8 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import Info from './icons/info'
-import FooterSwoosh from './icons/footerSwoosh'
-import Underline from './icons/underline'
+import Cheeseburger from './icons/cheeseburger'
+import Hamburger from './icons/hamburger'
 
 export default function Icon(props) {
   function getClasses() {
@@ -18,9 +17,8 @@ export default function Icon(props) {
   }
 
   const iconMap = {
-    Info: <Info />,
-    FooterSwoosh: <FooterSwoosh />,
-    Underline: <Underline />,
+    cheeseburger: <Cheeseburger />,
+    hamburger: <Hamburger />,
   }
 
   return <i className={getClassName()}>{iconMap[props.type]}</i>

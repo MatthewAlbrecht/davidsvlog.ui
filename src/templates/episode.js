@@ -2,35 +2,52 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
 import Layout from 'src/components/layout/layout'
-import { Txt, Container } from 'src/components/base/base'
+import { Txt, Container, Box } from 'src/components/base/base'
 
 class EpisdoeTemplate extends React.Component {
   render() {
     const episode = get(this.props, 'data.contentfulEpisode')
+    const episodeTypes = get(this.props, 'data.contentfulEpisode.episodeTypes')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
       <Layout location={this.props.location}>
         <Container>
-          <Helmet
-            title={`${(episode.nickName || episode.firstName) +
-              episode.lastName} | ${siteTitle}`}
-          />
-          <Txt
-            tag="h2"
-            size="16"
-            color="Slate"
-            content={episode.episodeNumber}
-          />
-          <Txt tag="h1" size="24" color="Slate" content={episode.title} />
-          <Txt
-            tag="p"
-            size="12"
-            color="DarkSlate"
-            content="I will write some great placeholder text – and nobody writes better placeholder text than me, believe me – and I’ll write it very inexpensively. I will write some great, great text on your website’s Southern border, and I will make Google pay for that text. Mark my words. The concept of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive."
-          />
+          <Helmet title={`${episode.number} | ${siteTitle}`} />
+          <Box classes="flats5">
+            <Txt
+              classes="tertiary"
+              tag="h2"
+              size="44"
+              color="Slate"
+              content={`${episode.number}.`}
+            />
+          </Box>
+          <Txt tag="h1" size="22" color="Slate" content={episode.title} />
+          <Box classes="top1 bottom5">
+            {episodeTypes.map(type => (
+              <Txt
+                className="episode-type"
+                tag="span"
+                size="10"
+                color="slate"
+                content={type}
+                key={type}
+              />
+            ))}
+          </Box>
+          <Box>
+            <div className="episode-videoContainer">
+              <iframe
+                className="episode-video"
+                src="https://www.youtube-nocookie.com/embed/brQEnKsMvB0"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </Box>
         </Container>
       </Layout>
     )
@@ -47,9 +64,10 @@ export const pageQuery = graphql`
       }
     }
     contentfulEpisode(slug: { eq: $slug }) {
-      episodeNumber
+      number
       title
       link
+      episodeTypes
     }
   }
 `

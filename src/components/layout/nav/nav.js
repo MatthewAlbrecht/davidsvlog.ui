@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
-import { Container } from 'src/components/base/base'
+import { Container, Icon } from 'src/components/base/base'
 
 const Nav = () => {
   const data = useStaticQuery(
@@ -31,6 +31,20 @@ const Nav = () => {
             <span className="logo-davids">david's</span>
             <span className="logo-vlog">vlog</span>
           </h1>
+          <div className="hamburgerMenu">
+            <button className="hamburgerMenu-button">
+              <Icon
+                className="hamburgerMenu-icon"
+                type="hamburger"
+                classes="24"
+              ></Icon>
+              <Icon
+                className="hamburgerMenu-activeIcon"
+                type="cheeseburger"
+                classes="24"
+              ></Icon>
+            </button>
+          </div>
           <ul className="mainNav">
             {navItems
               .map(item => item.node)
@@ -41,7 +55,7 @@ const Nav = () => {
                   </Link>
                   <ul className="secondaryNav">
                     {item.childItems.map(childItem => (
-                      <li className="secondaryNav-item">
+                      <li className="secondaryNav-item" key={childItem.slug}>
                         <Link
                           className="secondaryNav-link"
                           to={`/${item.slug}/${childItem.slug}`}
