@@ -18,7 +18,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "David's Vlog",
+    title: 'Vlog Squad',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [

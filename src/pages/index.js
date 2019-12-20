@@ -7,6 +7,10 @@ import Layout from 'src/components/layout/layout'
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const mostRecentEpisode = get(
+      this,
+      'props.data.allContentfulEpisode.edges.node'
+    )
     console.log(siteTitle)
 
     return (
@@ -26,6 +30,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulEpisode(limit: 5, sort: { fields: releaseDate, order: DESC }) {
+      edges {
+        node {
+          id
+          number
+        }
       }
     }
   }
