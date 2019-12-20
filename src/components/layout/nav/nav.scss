@@ -1,26 +1,33 @@
-body {
+html {
   background-color: #eaf5f4;
+  overflow-x: hidden;
 }
 
 .header {
   background-color: $colorWhite;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
   height: rhythm(8);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $zHeader;
 }
 
 .navBar {
-  width: 100%;
-  height: 100%;
   align-items: center;
   display: flex;
   flex-direction: row;
+  height: 100%;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 
 .logo {
+  font-family: $fontFamilyLogo;
   font-size: 2.4rem;
   font-weight: 500;
-  font-family: $fontFamilyLogo;
 }
 
 .logo-davids {
@@ -40,8 +47,10 @@ body {
 }
 
 .mainNav-link {
-  font-size: 1.6rem;
   color: $colorDarkTeal;
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: rhythm(3) rhythm(2.5);
 
   &:hover {
     color: $colorDarkestTeal;
@@ -49,7 +58,6 @@ body {
 }
 
 .mainNav-item {
-  padding: rhythm(3) rhythm(2.5);
   position: relative;
 
   &:hover .secondaryNav {
@@ -59,26 +67,27 @@ body {
 
 .secondaryNav {
   background: $colorWhite;
-  bottom: 0;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.05);
   display: none;
   left: 50%;
   padding: rhythm(1) rhythm(2.5);
   position: absolute;
-  transform: translateY(100%) translateX(-50%);
+  top: 100%;
+  transform: translateX(-50%);
   width: 20rem;
 }
 
 .secondaryNav-item {
-  padding: rhythm(1.5) rhythm(1);
-
   & + .secondaryNav-item {
     border-top: solid 0.1rem $colorGrey92;
   }
 }
 
 .secondaryNav-link {
-  font-size: 1.2rem;
   color: $colorDarkTeal;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: rhythm(1.5) rhythm(1);
 
   &:hover {
     color: $colorDarkestTeal;

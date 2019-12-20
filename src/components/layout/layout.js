@@ -20,7 +20,7 @@ class Template extends React.Component {
           ></link>
         </Helmet>
         <Nav />
-        {children}
+        <main className="main">{children}</main>
       </>
     )
   }

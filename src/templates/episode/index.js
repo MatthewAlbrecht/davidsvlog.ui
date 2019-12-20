@@ -40,9 +40,9 @@ class EpisdoeTemplate extends React.Component {
           <Txt
             tag="h1"
             size="30 40Md"
-            space="15"
             color="Slate"
             semibold
+            secondary
             content={episode.title}
           />
           <Box classes="top2 bottom4">
@@ -51,21 +51,19 @@ class EpisdoeTemplate extends React.Component {
             <TagList tags={sponsor} name="sponsor" iconType="dollarSign" />
           </Box>
         </Container>
-        <div className="episode-videoContainer">
+        <Container>
           <Box classes="flats5">
-            <Container>
-              <div className="episode-videoAspectRatioContainer">
-                <iframe
-                  className="episode-video"
-                  src="https://www.youtube-nocookie.com/embed/brQEnKsMvB0"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </Container>
+            <div className="episode-videoAspectRatioContainer">
+              <iframe
+                className="episode-video"
+                src="https://www.youtube-nocookie.com/embed/brQEnKsMvB0"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </Box>
-        </div>
+        </Container>
         <Container classes="content">
           <Box classes="flats6">
             <Featuring people={people} />

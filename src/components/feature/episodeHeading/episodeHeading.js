@@ -11,7 +11,7 @@ const EpisodeHeading = props => {
         space="15"
         color="Slate"
         content={props.title}
-        semibold
+        bold
         uppercase
       />
       <Box classes="top1 bottom5">
