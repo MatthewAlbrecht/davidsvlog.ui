@@ -7,11 +7,10 @@ const EpisodeHeading = props => {
       <Txt
         classes="center"
         tag="h3"
-        size="14"
+        size="22 24Md"
         space="15"
         color="Slate"
         content={props.title}
-        italic
         semibold
         uppercase
       />

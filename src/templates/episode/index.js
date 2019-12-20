@@ -24,12 +24,12 @@ class EpisdoeTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Container>
+        <Container classes="content">
           <Helmet title={`${episode.number} | ${siteTitle}`} />
           <Box classes="top4 bottom_5">
             <Txt
               tag="span"
-              size="10"
+              size="12 14Md"
               space="25"
               color="LightSlate"
               content={`Episode ${episode.number} | ${releaseDate}`}
@@ -39,7 +39,8 @@ class EpisdoeTemplate extends React.Component {
           </Box>
           <Txt
             tag="h1"
-            size="22"
+            size="30 40Md"
+            space="15"
             color="Slate"
             semibold
             content={episode.title}
@@ -65,7 +66,7 @@ class EpisdoeTemplate extends React.Component {
             </Container>
           </Box>
         </div>
-        <Container>
+        <Container classes="content">
           <Box classes="flats6">
             <Featuring people={people} />
           </Box>
@@ -73,7 +74,7 @@ class EpisdoeTemplate extends React.Component {
         {descriptionObject && (
           <div className="episode-description">
             <Box classes="flats8">
-              <Container>
+              <Container classes="content">
                 <EpisodeDescription data={descriptionObject} />
               </Container>
             </Box>

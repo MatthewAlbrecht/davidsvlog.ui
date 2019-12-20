@@ -1,8 +1,9 @@
 .episode-videoContainer {
-  background-color: rgba($colorSlate, 0.1);
+  background-color: rgba($colorSlate, 1);
 }
 
 .episode-videoAspectRatioContainer {
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.7);
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;

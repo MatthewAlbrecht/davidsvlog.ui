@@ -10,7 +10,10 @@ const EpisodeDescription = props => {
   function createParagraphComponent(data, i) {
     // console.log(data)
     return (
-      <p className="episodeDescription-paragraph" key={i}>
+      <p
+        className="episodeDescription-paragraph txt txt_18 txt_21Md txt_line158 txt_secondary txt_colorSlate"
+        key={i}
+      >
         {data.children.map(childData => {
           // console.log(childData)
           switch (childData.type) {

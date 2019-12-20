@@ -5,7 +5,7 @@ import { Txt, Icon } from 'src/components/base/base'
 const TagList = props => {
   const { tags, name, iconType } = props
   const txtClasses = classnames(`tag`, `tag--${name}`)
-  console.log(tags)
+
   if (!tags) return null
   return (
     <>
@@ -13,7 +13,7 @@ const TagList = props => {
         <Txt
           className={txtClasses}
           tag="span"
-          size="10"
+          size="12 14Md"
           color="Slate"
           key={tag}
         >

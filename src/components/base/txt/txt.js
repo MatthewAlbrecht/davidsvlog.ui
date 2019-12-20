@@ -55,16 +55,17 @@ export default class Txt extends Component {
 
   get className() {
     const {
-      uppercase,
-      semibold,
-      thin,
       bold,
-      light,
       btn,
-      strike,
       italic,
+      light,
+      lowercase,
       secondary,
+      semibold,
+      strike,
       tertiary,
+      thin,
+      uppercase,
     } = this.props
 
     return classnames(
@@ -78,6 +79,7 @@ export default class Txt extends Component {
       this.props.className,
       { txt_italic: italic },
       { txt_uppercase: uppercase },
+      { txt_lowercase: lowercase },
       { txt_thin: thin },
       { txt_light: light },
       { txt_semibold: semibold },

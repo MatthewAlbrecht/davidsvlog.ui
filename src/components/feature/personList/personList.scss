@@ -7,7 +7,16 @@
   column-gap: rhythm(4);
 }
 
+@include breakpoint(550px) {
+  .personList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @include breakpoint(breakpoint_size('md')) {
+  .personList {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 @include breakpoint(breakpoint_size('lg')) {
