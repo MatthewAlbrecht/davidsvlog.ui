@@ -28,6 +28,14 @@ html {
   font-family: $fontFamilyLogo;
   font-size: 2.4rem;
   font-weight: 500;
+
+  &:hover .logo-davids {
+    animation: logoAnimation 5s infinite $easeInOutQuad;
+  }
+
+  &:hover .logo-vlog {
+    animation: logoAnimation 5s infinite $easeInOutQuad reverse;
+  }
 }
 
 .logo-davids {
@@ -37,6 +45,27 @@ html {
 .logo-vlog {
   color: $colorFlamingo;
   font-weight: 200;
+}
+
+@keyframes logoAnimation {
+  0% {
+    color: $colorTeal;
+  }
+  20% {
+    color: $colorPastelGreen;
+  }
+  40% {
+    color: $colorCoral;
+  }
+  60% {
+    color: $colorBabyBlue;
+  }
+  80% {
+    color: $colorLightKhaki;
+  }
+  100% {
+    color: $colorFlamingo;
+  }
 }
 
 .mainNav {

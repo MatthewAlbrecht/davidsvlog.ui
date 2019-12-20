@@ -27,10 +27,12 @@ const Nav = () => {
     <header className="header" role="navigation">
       <Container classes="fullHeight">
         <nav className="navBar">
-          <h1 className="logo">
-            <span className="logo-davids">david's</span>
-            <span className="logo-vlog">vlog</span>
-          </h1>
+          <Link to="/">
+            <h1 className="logo">
+              <span className="logo-davids">david's</span>
+              <span className="logo-vlog">vlog</span>
+            </h1>
+          </Link>
           <div className="hamburgerMenu">
             <button className="hamburgerMenu-button">
               <Icon
