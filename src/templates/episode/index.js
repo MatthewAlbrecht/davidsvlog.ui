@@ -26,7 +26,7 @@ class EpisdoeTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Container classes="content">
           <Helmet title={`${episode.number} | ${siteTitle}`} />
-          <Box classes="top4 bottom_5">
+          <Box classes="top4 top8Md bottom_5">
             <Txt
               tag="span"
               size="12 14Md"
