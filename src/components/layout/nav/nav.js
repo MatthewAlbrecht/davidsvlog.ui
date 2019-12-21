@@ -29,8 +29,8 @@ const Nav = () => {
         <nav className="navBar">
           <Link to="/">
             <h1 className="logo">
-              <span className="logo-davids">david's</span>
               <span className="logo-vlog">vlog</span>
+              <span className="logo-squad">squad</span>
             </h1>
           </Link>
           <div className="hamburgerMenu">

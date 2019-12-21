@@ -3,21 +3,25 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from 'src/components/layout/layout'
+import HomepageRecentVideos from 'src/components/feature/homepageRecentVideos/homepageRecentVideos'
+import { Container, Box } from 'src/components/base/base'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const mostRecentEpisode = get(
+    const mostRecentEpisodes = get(
       this,
-      'props.data.allContentfulEpisode.edges.node'
+      'props.data.allContentfulEpisode.edges'
     )
-    console.log(siteTitle)
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-        </div>
+        <Helmet title={siteTitle} />
+        <Container classes="content">
+          <Box classes="flats4 flats6Md">
+            <HomepageRecentVideos episodes={mostRecentEpisodes} />
+          </Box>
+        </Container>
       </Layout>
     )
   }
@@ -37,6 +41,8 @@ export const pageQuery = graphql`
         node {
           id
           number
+          slug
+          title
         }
       }
     }

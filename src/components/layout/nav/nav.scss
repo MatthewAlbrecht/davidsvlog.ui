@@ -29,7 +29,7 @@ html {
   font-size: 2.4rem;
   font-weight: 500;
 
-  &:hover .logo-davids {
+  &:hover .logo-squad {
     animation: logoAnimation 5s infinite $easeInOutQuad;
   }
 
@@ -38,13 +38,13 @@ html {
   }
 }
 
-.logo-davids {
-  color: $colorTeal;
+.logo-squad {
+  color: $colorFlamingo;
+  font-weight: 200;
 }
 
 .logo-vlog {
-  color: $colorFlamingo;
-  font-weight: 200;
+  color: $colorTeal;
 }
 
 @keyframes logoAnimation {
