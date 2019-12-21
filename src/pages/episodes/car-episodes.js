@@ -6,7 +6,6 @@ import HomepageRecentVideos from 'src/components/feature/homepageRecentVideos/ho
 
 export default function CarEpisodes(props) {
   const mostRecentEpisodes = get(props, 'data.allContentfulEpisode.edges')
-  console.log(props)
 
   return (
     <Layout location={props.location}>

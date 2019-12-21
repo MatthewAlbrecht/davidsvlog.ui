@@ -22,7 +22,6 @@ class EpisdoeTemplate extends React.Component {
       'data.contentfulEpisode.childContentfulEpisodeSummaryTextNode.childMarkdownRemark.htmlAst'
     )
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    console.log(videoIdFromUrl(episode.link))
 
     return (
       <Layout location={this.props.location}>
@@ -43,6 +42,7 @@ class EpisdoeTemplate extends React.Component {
             tag="h1"
             size="30 40Md"
             color="Slate"
+            line="10"
             semibold
             secondary
             content={episode.title}
