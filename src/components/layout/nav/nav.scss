@@ -3,26 +3,6 @@ html {
   overflow-x: hidden;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  background-color: rgba($colorWhite, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  backdrop-filter: blur(1rem);
-  transition: opacity $easeInOutQuad 0.4s;
-
-  &--active {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
 .header {
   background-color: rgba($colorWhite, 0.98);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
@@ -139,47 +119,47 @@ html {
   }
 }
 
-.hamburgerMenu {
+.hamburger {
   position: absolute;
   right: 0;
 }
 
-.hamburgerMenu-button {
+.hamburger-button {
   &:hover {
-    .hamburgerMenu-icon {
+    .hamburger-icon {
       display: none;
     }
 
-    .hamburgerMenu-activeIcon {
+    .hamburger-activeIcon {
       display: inline-block;
     }
   }
   &--overlayActive {
-    .hamburgerMenu-icon {
+    .hamburger-icon {
       display: none;
     }
 
-    .hamburgerMenu-activeIcon {
+    .hamburger-activeIcon {
       display: inline-block;
     }
     &:hover {
-      .hamburgerMenu-icon {
+      .hamburger-icon {
         display: inline-block;
       }
 
-      .hamburgerMenu-activeIcon {
+      .hamburger-activeIcon {
         display: none;
       }
     }
   }
 }
 
-.hamburgerMenu-activeIcon {
+.hamburger-activeIcon {
   display: none;
 }
 
-.hamburgerMenu-icon,
-.hamburgerMenu-activeIcon {
+.hamburger-icon,
+.hamburger-activeIcon {
   .primaryFill {
     fill: $colorTeal;
   }
@@ -197,7 +177,7 @@ html {
     display: flex;
   }
 
-  .hamburgerMenu {
+  .hamburger {
     display: none;
   }
 }

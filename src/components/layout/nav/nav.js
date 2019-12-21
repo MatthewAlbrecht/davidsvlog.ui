@@ -28,8 +28,8 @@ const Nav = () => {
   const [overlayActive, toggle] = useToggle(false)
   const navItems = data.allContentfulNavItems.edges
   const hamburgerIconClasses = classnames(
-    'hamburgerMenu-button',
-    overlayActive && 'hamburgerMenu-button--overlayActive'
+    'hamburger-button',
+    overlayActive && 'hamburger-button--overlayActive'
   )
 
   return (
@@ -43,15 +43,15 @@ const Nav = () => {
               <span className="logo-squad">squad</span>
             </h1>
           </Link>
-          <div className="hamburgerMenu">
+          <div className="hamburger">
             <button className={hamburgerIconClasses} onClick={toggle}>
               <Icon
-                className="hamburgerMenu-icon"
+                className="hamburger-icon"
                 type="hamburger"
                 classes="24"
               ></Icon>
               <Icon
-                className="hamburgerMenu-activeIcon"
+                className="hamburger-activeIcon"
                 type="cheeseburger"
                 classes="24"
               ></Icon>
