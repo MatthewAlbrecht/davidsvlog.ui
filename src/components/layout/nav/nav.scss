@@ -5,7 +5,7 @@ html {
 
 .header {
   background-color: $colorWhite;
-  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   height: rhythm(8);
   left: 0;
   position: fixed;
@@ -76,9 +76,7 @@ html {
 }
 
 .mainNav-link {
-  color: $colorDarkTeal;
   display: inline-block;
-  font-size: 1.6rem;
   padding: rhythm(3) rhythm(2.5);
 
   &:hover {
@@ -96,7 +94,7 @@ html {
 
 .secondaryNav {
   background: $colorWhite;
-  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.075);
   display: none;
   left: 50%;
   padding: rhythm(1) rhythm(2.5);
@@ -113,9 +111,7 @@ html {
 }
 
 .secondaryNav-link {
-  color: $colorDarkTeal;
   display: inline-block;
-  font-size: 1.2rem;
   padding: rhythm(1.5) rhythm(1);
 
   &:hover {
