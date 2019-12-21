@@ -27,11 +27,14 @@
 .tag-locationIcon,
 .tag-sponsorIcon {
   margin-right: rhythm(0.5);
-  top: 0.1rem;
 
   .primaryFill {
     fill: $colorSlate;
   }
+}
+
+.tag-locationIcon {
+  top: 0.1rem;
 }
 
 @include breakpoint(breakpoint_size('md')) {

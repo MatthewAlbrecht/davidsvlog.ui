@@ -1,6 +1,9 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
+import classnames from 'classnames'
+import useToggle from 'src/hooks/useToggle'
 import { Container, Icon, Txt } from 'src/components/base/base'
+import HamburgerMenu from './hamburgerMenu'
 
 const Nav = () => {
   const data = useStaticQuery(
@@ -21,10 +24,17 @@ const Nav = () => {
       }
     `
   )
-  let navItems = data.allContentfulNavItems.edges
+
+  const [overlayActive, toggle] = useToggle(false)
+  const navItems = data.allContentfulNavItems.edges
+  const hamburgerIconClasses = classnames(
+    'hamburgerMenu-button',
+    overlayActive && 'hamburgerMenu-button--overlayActive'
+  )
 
   return (
     <header className="header" role="navigation">
+      <HamburgerMenu overlayActive={overlayActive} />
       <Container classes="fullHeight">
         <nav className="navBar">
           <Link to="/">
@@ -34,7 +44,7 @@ const Nav = () => {
             </h1>
           </Link>
           <div className="hamburgerMenu">
-            <button className="hamburgerMenu-button">
+            <button className={hamburgerIconClasses} onClick={toggle}>
               <Icon
                 className="hamburgerMenu-icon"
                 type="hamburger"
