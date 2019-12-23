@@ -64,7 +64,7 @@ const Nav = () => {
                 <li className="mainNav-item" key={item.slug}>
                   <Txt
                     tag="Link"
-                    color="DarkTeal"
+                    color="DarkestTeal"
                     size="16"
                     line="10"
                     className="mainNav-link"
@@ -72,12 +72,12 @@ const Nav = () => {
                   >
                     {item.title}
                   </Txt>
-                  <ul className="secondaryNav">
+                  <ul className={`secondaryNav secondaryNav--${item.slug}`}>
                     {item.childItems.map(childItem => (
                       <li className="secondaryNav-item" key={childItem.slug}>
                         <Txt
                           tag="Link"
-                          color="DarkTeal"
+                          color="DarkestTeal"
                           size="14"
                           className="secondaryNav-link"
                           to={`/${item.slug}/${childItem.slug}`}

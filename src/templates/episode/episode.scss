@@ -1,10 +1,15 @@
 .episode-videoAspectRatioContainer {
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
   background-color: $colorDarkTeal;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.45),
+    0 8px 16px -8px rgba(0, 0, 0, 0.5), 0 -6px 16px -6px rgba(0, 0, 0, 0.125);
+  border-radius: 0.4rem;
   height: 0;
+  overflow: hidden;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
+  transition: box-shadow 0.25s $easeInOutQuad;
+  will-change: box-shadow;
 }
 
 .episode-video {

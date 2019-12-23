@@ -22,20 +22,13 @@ html {
   justify-content: center;
   position: relative;
   width: 100%;
+  perspective: 2000px;
 }
 
 .logo {
   font-family: $fontFamilyLogo;
   font-size: 2.4rem;
   font-weight: 500;
-
-  &:hover .logo-squad {
-    animation: logoAnimation 5s infinite $easeInOutQuad;
-  }
-
-  &:hover .logo-vlog {
-    animation: logoAnimation 5s infinite $easeInOutQuad reverse;
-  }
 }
 
 .logo-squad {
@@ -45,27 +38,6 @@ html {
 
 .logo-vlog {
   color: $colorTeal;
-}
-
-@keyframes logoAnimation {
-  0% {
-    color: $colorTeal;
-  }
-  20% {
-    color: $colorPastelGreen;
-  }
-  40% {
-    color: $colorCoral;
-  }
-  60% {
-    color: $colorBabyBlue;
-  }
-  80% {
-    color: $colorLightKhaki;
-  }
-  100% {
-    color: $colorFlamingo;
-  }
 }
 
 .mainNav {
@@ -80,7 +52,7 @@ html {
   padding: rhythm(3) rhythm(2.5);
 
   &:hover {
-    color: $colorDarkestTeal;
+    color: $colorDarkTeal;
   }
 }
 
@@ -88,25 +60,63 @@ html {
   position: relative;
 
   &:hover .secondaryNav {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: rotateX(0deg) translateX(-50%);
   }
 }
 
 .secondaryNav {
-  background-color: rgba($colorWhite, 0.98);
-  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.075);
-  display: none;
+  background-color: $colorWhite;
+  border-radius: 0.4rem;
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgba(0, 0, 0, 0.3),
+    0 -18px 60px -10px rgba(0, 0, 0, 0.025);
   left: 50%;
-  padding: rhythm(1) rhythm(2.5);
+  opacity: 0;
+  padding: rhythm(2.5);
   position: absolute;
-  top: 100%;
-  transform: translateX(-50%);
-  width: 20rem;
+  top: calc(100% + 1.2rem);
+  transform-origin: 50% -50px;
+  transform: rotateX(-15deg) translateX(-50%);
+  transition-duration: 0.4s;
+  transition-property: transform, opacity;
+  visibility: hidden;
+  width: 18rem;
+  will-change: transform, opacity;
+
+  &::before {
+    background-color: $colorWhite;
+    border-radius: 0.4rem;
+    box-shadow: -3px -3px 5px rgba(82, 95, 127, 0.04);
+    content: '';
+    height: 1.6rem;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: rotate(45deg) translateX(-50%);
+    width: 1.6rem;
+    will-change: transform;
+  }
+  &::after {
+    content: '';
+    height: 1.6rem;
+    left: 0;
+    position: absolute;
+    top: -1.6rem;
+    width: 100%;
+  }
 }
 
-.secondaryNav-item {
-  & + .secondaryNav-item {
-    border-top: solid 0.1rem $colorGrey92;
+.secondaryNav.secondaryNav--merch {
+  left: 10%;
+  transform: rotateX(-15deg) translateX(-50%);
+
+  &::before {
+    content: '';
+    left: 65%;
+    top: -0.6rem;
+    transform: rotate(45deg);
   }
 }
 
@@ -115,7 +125,7 @@ html {
   padding: rhythm(1.5) rhythm(1);
 
   &:hover {
-    color: $colorDarkestTeal;
+    color: $colorDarkTeal;
   }
 }
 
