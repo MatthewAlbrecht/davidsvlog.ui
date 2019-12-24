@@ -9,7 +9,10 @@ const Nav = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulNavItems(filter: { isPrimaryNavItem: { eq: true } }) {
+        allContentfulNavItems(
+          filter: { isPrimaryNavItem: { eq: true } }
+          sort: { fields: order, order: ASC }
+        ) {
           edges {
             node {
               childItems {
@@ -34,7 +37,7 @@ const Nav = () => {
 
   return (
     <header className="header" role="navigation">
-      <HamburgerMenu overlayActive={overlayActive} />
+      <HamburgerMenu overlayActive={overlayActive} navItems={navItems} />
       <Container classes="fullHeight">
         <nav className="navBar">
           <Link to="/">
@@ -72,21 +75,23 @@ const Nav = () => {
                   >
                     {item.title}
                   </Txt>
-                  <ul className={`secondaryNav secondaryNav--${item.slug}`}>
-                    {item.childItems.map(childItem => (
-                      <li className="secondaryNav-item" key={childItem.slug}>
-                        <Txt
-                          tag="Link"
-                          color="DarkestTeal"
-                          size="14"
-                          className="secondaryNav-link"
-                          to={`/${item.slug}/${childItem.slug}`}
-                        >
-                          {childItem.title}
-                        </Txt>
-                      </li>
-                    ))}
-                  </ul>
+                  {item.childItems && (
+                    <ul className={`secondaryNav secondaryNav--${item.slug}`}>
+                      {item.childItems.map(childItem => (
+                        <li className="secondaryNav-item" key={childItem.slug}>
+                          <Txt
+                            tag="Link"
+                            color="DarkestTeal"
+                            size="14"
+                            className="secondaryNav-link"
+                            to={`/${item.slug}/${childItem.slug}`}
+                          >
+                            {childItem.title}
+                          </Txt>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
           </ul>

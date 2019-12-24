@@ -24,7 +24,7 @@ const EpisodeDescription = props => {
   }
 
   function createParagraphComponent(data, i) {
-    console.log('createParagraphComponent', data)
+    // console.log('createParagraphComponent', data)
     return (
       <Txt
         tag="p"
@@ -41,13 +41,13 @@ const EpisodeDescription = props => {
   }
 
   function createUlComponent(data, i) {
-    console.log('createUlComponent', data)
+    // console.log('createUlComponent', data)
 
     return null
   }
 
   function createOlComponent(data, i) {
-    console.log('createOlComponent', data)
+    // console.log('createOlComponent', data)
 
     return null
   }

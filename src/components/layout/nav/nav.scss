@@ -4,13 +4,14 @@ html {
 }
 
 .header {
-  background-color: rgba($colorWhite, 0.98);
+  background-color: rgba($colorWhite, 0.95);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   height: rhythm(8);
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
+  backdrop-filter: blur(1.2rem);
   z-index: $zHeader;
 }
 
@@ -135,6 +136,8 @@ html {
 }
 
 .hamburger-button {
+  z-index: 2000;
+  position: relative;
   &:hover {
     .hamburger-icon {
       display: none;

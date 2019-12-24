@@ -5,7 +5,10 @@ export default () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulNavItems(filter: { isPrimaryNavItem: { eq: true } }) {
+        allContentfulNavItems(
+          filter: { isPrimaryNavItem: { eq: true } }
+          sort: { fields: order, order: DESC }
+        ) {
           edges {
             node {
               childItems {
@@ -21,7 +24,7 @@ export default () => {
     `
   )
   let navItems = data.allContentfulNavItems.edges
-
+  console.log(navItems)
   return (
     <nav role="navigation">
       <ul>

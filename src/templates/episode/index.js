@@ -33,7 +33,7 @@ class EpisdoeTemplate extends React.Component {
               size="12 14Md"
               space="25"
               color="LightSlate"
-              content={`Episode ${episode.number} | ${releaseDate}`}
+              content={`${episode.number} | ${releaseDate}`}
               uppercase
               semibold
             />
@@ -43,8 +43,7 @@ class EpisdoeTemplate extends React.Component {
             size="30 40Md"
             color="Slate"
             line="10"
-            semibold
-            secondary
+            bold
             content={episode.title}
           />
           <Box classes="top2 bottom4">

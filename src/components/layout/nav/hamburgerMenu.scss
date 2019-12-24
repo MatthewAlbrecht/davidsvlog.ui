@@ -6,14 +6,14 @@
   bottom: 0;
   right: 0;
   height: 100%;
-  background-color: rgba($colorWhite, 0.5);
+  background-color: rgba($colorWhite, 0.75);
   opacity: 0;
   visibility: hidden;
-  backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1.2rem);
   transition: opacity $easeInOutQuad 0.4s;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   &--active {
     opacity: 1;
@@ -22,12 +22,26 @@
 }
 
 .hamburgerMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-top: rhythm(11);
+}
+
+.hamburgerMenu-item + .hamburgerMenu-item {
+  padding-top: rhythm(3);
 }
 
 .hamburgerMenu-link {
-  padding: rhythm(2);
+  display: inline-block;
+  padding-bottom: rhythm(1);
+}
+
+.secondaryHamburgerMenu {
+  padding-left: rhythm(2);
+}
+
+.secondaryHamburgerMenu-item {
+}
+
+.secondaryHamburgerMenu-link {
+  display: inline-block;
+  padding: rhythm(1) 0;
 }
