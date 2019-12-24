@@ -7,6 +7,10 @@
   column-gap: rhythm(4);
 }
 
+.personList-image {
+  height: 100%;
+}
+
 @include breakpoint(550px) {
   .personList {
     grid-template-columns: repeat(4, 1fr);

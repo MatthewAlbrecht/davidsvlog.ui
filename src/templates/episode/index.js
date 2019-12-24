@@ -108,6 +108,11 @@ export const pageQuery = graphql`
         nickname
         lastName
         slug
+        image {
+          fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
       }
       childContentfulEpisodeSummaryTextNode {
         childMarkdownRemark {

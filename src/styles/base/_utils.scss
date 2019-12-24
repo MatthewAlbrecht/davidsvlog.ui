@@ -1,6 +1,32 @@
 /* ---------------------------------------------
  Utility Classes
 --------------------------------------------- */
+.txt,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  opacity: 0;
+  transition: opacity 0.1s $easeInOutQuad;
+}
+
+.wf-active .txt,
+.wf-active a,
+.wf-active button,
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active h4,
+.wf-active h5,
+.wf-active h6,
+.wf-active p {
+  opacity: 1;
+}
 
 .visuallyHidden {
   border: 0;
