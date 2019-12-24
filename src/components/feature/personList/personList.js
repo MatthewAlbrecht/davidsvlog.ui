@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 const PersonList = props => {
   const { people } = props
   function renderImg(person) {
-    console.log(person)
     if (person.image) {
       return (
         <Img

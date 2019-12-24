@@ -24,7 +24,6 @@ const EpisodeDescription = props => {
   }
 
   function createParagraphComponent(data, i) {
-    // console.log('createParagraphComponent', data)
     return (
       <Txt
         tag="p"
@@ -41,14 +40,10 @@ const EpisodeDescription = props => {
   }
 
   function createUlComponent(data, i) {
-    // console.log('createUlComponent', data)
-
     return null
   }
 
   function createOlComponent(data, i) {
-    // console.log('createOlComponent', data)
-
     return null
   }
 
@@ -70,8 +65,6 @@ const EpisodeDescription = props => {
         return createLinkComponent(data)
 
       default:
-        console.warn('new tagName has no handler:', data.tagName)
-
         return null
     }
   }
