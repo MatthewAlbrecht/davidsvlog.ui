@@ -14,6 +14,7 @@ class Template extends React.Component {
     return (
       <>
         <Helmet>
+          <html lang="en" />
           <script>
             {typeof document !== `undefined` &&
               (function(d) {

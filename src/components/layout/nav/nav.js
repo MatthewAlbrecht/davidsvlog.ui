@@ -58,6 +58,7 @@ const Nav = () => {
                 type="cheeseburger"
                 classes="24"
               ></Icon>
+              <span className="visuallyHidden">Menu</span>
             </button>
           </div>
           <ul className="mainNav">
