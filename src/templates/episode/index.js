@@ -109,8 +109,8 @@ export const pageQuery = graphql`
         lastName
         slug
         image {
-          fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
-            ...GatsbyContentfulFluid_tracedSVG
+          file {
+            url
           }
         }
       }

@@ -36,7 +36,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulEpisode(limit: 5, sort: { fields: releaseDate, order: DESC }) {
+    allContentfulEpisode(
+      limit: 100
+      sort: { fields: releaseDate, order: DESC }
+    ) {
       edges {
         node {
           id

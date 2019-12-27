@@ -7,8 +7,40 @@
   column-gap: rhythm(4);
 }
 
-.personList-image {
+.personList-item {
+  cursor: pointer;
+
+  &:hover .personList-name {
+    color: $colorDarkTeal;
+  }
+}
+
+.personList-imageOuterBox {
+  position: relative;
+  padding-bottom: 140%;
+  width: 100%;
+}
+
+.personList-imageInnerBox {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
   height: 100%;
+  transform: translateX(-50%);
+
+  &--nick-antonyan {
+    width: 85%;
+  }
+
+  &--heath-hussar {
+    width: 153%;
+    top: -8%;
+  }
+}
+
+.personList-image {
+  width: 100%;
 }
 
 @include breakpoint(550px) {
