@@ -1,5 +1,5 @@
 html {
-  background-color: #eaf5f4;
+  background-color: $colorBackground;
   overflow-x: hidden;
 }
 
@@ -11,7 +11,6 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  backdrop-filter: blur(1.2rem);
   z-index: $zHeader;
 }
 

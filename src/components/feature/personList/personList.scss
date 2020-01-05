@@ -33,6 +33,34 @@
     width: 85%;
   }
 
+  &--josh-peck {
+    width: 85%;
+  }
+
+  &--toddy-smith {
+    width: 85%;
+  }
+
+  &--matt-king {
+    width: 95%;
+  }
+
+  &--carly-incontro {
+    width: 111%;
+  }
+
+  &--jeff-wittek {
+    width: 89%;
+  }
+
+  &--jason-nash {
+    width: 85%;
+  }
+
+  &--erin-gilfoy {
+    width: 110%;
+  }
+
   &--heath-hussar {
     width: 153%;
     top: -8%;
@@ -41,6 +69,13 @@
 
 .personList-image {
   width: 100%;
+}
+
+.personList-name {
+  position: relative;
+  z-index: $zMain;
+  border-radius: 0.4rem;
+  background-color: $colorBackground;
 }
 
 @include breakpoint(550px) {

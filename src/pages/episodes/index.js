@@ -1,5 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
+
 import Layout from 'src/components/layout/layout'
 import { Container, Box } from 'src/components/base/base'
 import HomepageRecentVideos from 'src/components/feature/homepageRecentVideos/homepageRecentVideos'
