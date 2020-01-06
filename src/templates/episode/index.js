@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
+
+import Helmet from 'react-helmet'
 import Layout from 'src/components/layout/layout'
 import TagList from 'src/components/feature/tagList/tagList'
 import Featuring from 'src/components/feature/featuring/featuring'
@@ -25,8 +26,8 @@ class EpisdoeTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
+        <Helmet title={`Vlog ${episode.number} | ${siteTitle}`} />
         <Container classes="content">
-          <Helmet title={`${episode.number} | ${siteTitle}`} />
           <Box classes="top4 top8Md bottom_5">
             <Txt
               tag="span"

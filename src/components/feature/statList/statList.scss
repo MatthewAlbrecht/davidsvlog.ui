@@ -1,0 +1,22 @@
+.statList {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  display: grid;
+  column-gap: rhythm(2);
+  row-gap: rhythm(2);
+}
+
+.statList-item {
+  background-color: $colorWhite;
+  padding: rhythm(2);
+  border-radius: 0.4rem;
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
+}

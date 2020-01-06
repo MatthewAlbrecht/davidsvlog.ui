@@ -1,27 +1,13 @@
 import React from 'react'
-import { Txt, Box, Img as Image } from 'src/components/base/base'
-import Img from 'gatsby-image'
+import { getDisplayName } from 'src/utils/naming'
+
 import { Link } from 'gatsby'
+import PersonImage from 'src/components/feature/personImage/personImage'
+import { Txt, Box } from 'src/components/base/base'
 
 const PersonList = props => {
   const { people } = props
-  function renderImg(person) {
-    console.log(person.image)
 
-    if (person.image) {
-      return (
-        <img className="personList-image" src={person.image.file.url} alt="" />
-        // <Img
-        //   className="personList-image"
-        //   alt={
-        //     person.nickname || `${person.firstName} ${person.lastName || ''}`
-        //   }
-        //   fluid={person.image.fluid}
-        // ></Img>
-      )
-    }
-    return <Image className="personList-image" name="avatarMale" />
-  }
   return (
     <ul className="personList">
       {people.map(person => (
@@ -31,7 +17,7 @@ const PersonList = props => {
               <div
                 className={`personList-imageInnerBox personList-imageInnerBox--${person.slug}`}
               >
-                {renderImg(person)}
+                <PersonImage person={person} className="personList-image" />
               </div>
             </div>
             <Box classes="top2">
@@ -41,10 +27,7 @@ const PersonList = props => {
                 color="Slate"
                 classes="center"
                 className="personList-name"
-                content={
-                  person.nickname ||
-                  `${person.firstName} ${person.lastName || ''}`
-                }
+                content={getDisplayName(person)}
               />
             </Box>
           </Link>

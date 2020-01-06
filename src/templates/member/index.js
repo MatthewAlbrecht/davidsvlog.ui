@@ -1,26 +1,55 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
+import { getDisplayName } from 'src/utils/naming'
+
+import Helmet from 'react-helmet'
 import Layout from 'src/components/layout/layout'
+import { Txt, Container, Box } from 'src/components/base/base'
+import PersonImage from 'src/components/feature/personImage/personImage'
+import StatList from 'src/components/feature/statList/statList'
 
 class MemberTemplate extends React.Component {
   render() {
-    const member = get(this.props, 'data.contentfulCastMember')
+    const person = get(this.props, 'data.contentfulCastMember')
+    const episodes = get(this.props, 'data.allContentfulEpisode.edges')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
+    console.log(person, episodes)
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet
-            title={`${(member.nickName || member.firstName) +
-              member.lastName} | ${siteTitle}`}
-          />
-          {member.firstName}
-          {member.nickName}
-          {member.lastName}
-        </div>
+        <Helmet title={`${getDisplayName(person)} | ${siteTitle}`} />
+        <Container classes="content">
+          <div className="memberHeader">
+            <Box classes="top4 top8Md bottom_5">
+              <PersonImage person={person} className="memberHeader-image" />
+              <Box classes="top3">
+                <Txt
+                  tag="h1"
+                  size="30 40Md"
+                  color="Slate"
+                  align="center"
+                  bold
+                  content={getDisplayName(person)}
+                />
+                <Txt
+                  tag="span"
+                  size="12 14Md"
+                  space="25"
+                  color="LightSlate"
+                  align="center"
+                  classes="block"
+                  content={person.memberRank[0]}
+                  uppercase
+                  semibold
+                />
+              </Box>
+            </Box>
+          </div>
+          <Box classes="top6 top8Md">
+            <StatList />
+          </Box>
+        </Container>
       </Layout>
     )
   }
@@ -35,10 +64,38 @@ export const pageQuery = graphql`
         title
       }
     }
+    allContentfulEpisode(
+      filter: { people: { elemMatch: { slug: { eq: $slug } } } }
+      sort: { fields: releaseDate, order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          releaseDate
+          slug
+          link
+        }
+      }
+      totalCount
+    }
     contentfulCastMember(slug: { eq: $slug }) {
-      firstName
+      birthday
       nickname
       lastName
+      firstName
+      memberRank
+      socialLinks {
+        url
+        platform
+        handle
+      }
+      image {
+        file {
+          url
+        }
+        description
+      }
     }
   }
 `

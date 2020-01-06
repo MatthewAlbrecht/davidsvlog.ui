@@ -1,0 +1,14 @@
+.memberHeader-image {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+@include breakpoint(breakpoint_size('md')) {
+}
+
+@include breakpoint(breakpoint_size('lg')) {
+}
+
+@include breakpoint(breakpoint_size('xl')) {
+}

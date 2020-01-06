@@ -53,6 +53,7 @@
 // ----------------------
 
 @import '../templates/episode/episode';
+@import '../templates/member/member';
 
 // ----------------------
 // Feature Components
@@ -62,3 +63,4 @@
 @import '../components/feature/personList/personList';
 @import '../components/feature/episodeDescription/episodeDescription';
 @import '../components/feature/homepageRecentVideos/homepageRecentVideos';
+@import '../components/feature/statList/statList';
