@@ -15,7 +15,6 @@ class MemberTemplate extends React.Component {
     const episodes = get(this.props, 'data.allContentfulEpisode.edges')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
-    console.log(person, episodes)
     return (
       <Layout location={this.props.location}>
         <Helmet title={`${getDisplayName(person)} | ${siteTitle}`} />
