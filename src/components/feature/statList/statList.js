@@ -2,26 +2,26 @@ import React from 'react'
 
 import { Txt, Container, Box } from 'src/components/base/base'
 
-const StatList = props => {
+const StatList = ({ stats }) => {
   return (
     <div className="statList">
-      {[1, 2, 3, 4].map(item => (
-        <div className="statList-item" key={item}>
+      {stats.map((item, i) => (
+        <div className="statList-item" key={i}>
           <Txt
             tag="h1"
-            size="30 40Md"
+            size="40"
             color="DarkTeal"
             align="center"
             bold
-            content="625"
+            content={item.value}
           />
           <Txt
             tag="span"
-            size="12"
+            size="14"
             color="Slate"
             align="center"
             classes="block"
-            content="First Vlog"
+            content={item.label}
           />
         </div>
       ))}

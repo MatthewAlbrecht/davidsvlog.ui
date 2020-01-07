@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { getDisplayName } from 'src/utils/naming'
+import { getMemberStats } from 'src/utils/normalizers/member.normalizer'
 
 import Helmet from 'react-helmet'
 import Layout from 'src/components/layout/layout'
@@ -12,7 +13,8 @@ import StatList from 'src/components/feature/statList/statList'
 class MemberTemplate extends React.Component {
   render() {
     const person = get(this.props, 'data.contentfulCastMember')
-    const episodes = get(this.props, 'data.allContentfulEpisode.edges')
+    const episodes = get(this.props, 'data.recentEpisodes.edges')
+    const stats = getMemberStats(this.props.data)
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
@@ -46,7 +48,7 @@ class MemberTemplate extends React.Component {
             </Box>
           </div>
           <Box classes="top6 top8Md">
-            <StatList />
+            <StatList stats={stats} />
           </Box>
         </Container>
       </Layout>
@@ -63,9 +65,31 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulEpisode(
+    firstEpisode: allContentfulEpisode(
+      filter: { people: { elemMatch: { slug: { eq: $slug } } } }
+      sort: { fields: releaseDate, order: ASC }
+      limit: 1
+    ) {
+      edges {
+        node {
+          number
+        }
+      }
+    }
+    mostRecentEpisode: allContentfulEpisode(
+      sort: { fields: releaseDate, order: DESC }
+      limit: 1
+    ) {
+      edges {
+        node {
+          number
+        }
+      }
+    }
+    recentEpisodes: allContentfulEpisode(
       filter: { people: { elemMatch: { slug: { eq: $slug } } } }
       sort: { fields: releaseDate, order: DESC }
+      limit: 5
     ) {
       edges {
         node {
@@ -73,13 +97,14 @@ export const pageQuery = graphql`
           title
           releaseDate
           slug
+          number
           link
         }
       }
       totalCount
     }
     contentfulCastMember(slug: { eq: $slug }) {
-      birthday
+      birthday(difference: "years")
       nickname
       lastName
       firstName
