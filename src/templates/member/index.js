@@ -6,8 +6,9 @@ import { getMemberStats } from 'src/utils/normalizers/member.normalizer'
 
 import Helmet from 'react-helmet'
 import Layout from 'src/components/layout/layout'
-import { Txt, Container, Box } from 'src/components/base/base'
+import { Container, Box, Txt, Col, Row } from 'src/components/base/base'
 import PersonImage from 'src/components/feature/personImage/personImage'
+import PersonHeader from 'src/components/feature/personHeader/personHeader'
 import StatList from 'src/components/feature/statList/statList'
 
 class MemberTemplate extends React.Component {
@@ -21,34 +22,36 @@ class MemberTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`${getDisplayName(person)} | ${siteTitle}`} />
         <Container classes="content">
-          <div className="memberHeader">
-            <Box classes="top4 top8Md bottom_5">
-              <PersonImage person={person} className="memberHeader-image" />
-              <Box classes="top3">
-                <Txt
-                  tag="h1"
-                  size="30 40Md"
-                  color="Slate"
-                  align="center"
-                  bold
-                  content={getDisplayName(person)}
-                />
-                <Txt
-                  tag="span"
-                  size="12 14Md"
-                  space="25"
-                  color="LightSlate"
-                  align="center"
-                  classes="block"
-                  content={person.memberRank[0]}
-                  uppercase
-                  semibold
-                />
+          <Box classes="top4 top8Md">
+            <div className="person-contentGrid">
+              <div className="personHeader">
+                <PersonImage person={person} className="personHeader-image" />
+                <Box classes="top3">
+                  <Txt
+                    tag="h1"
+                    size="30 40Md"
+                    color="Slate"
+                    align="center"
+                    bold
+                    content={getDisplayName(person)}
+                  />
+                  <Txt
+                    tag="span"
+                    size="12 14Md"
+                    space="25"
+                    color="LightSlate"
+                    align="center"
+                    classes="block"
+                    content={person.memberRank[0]}
+                    uppercase
+                    semibold
+                  />
+                </Box>
+              </div>
+              <Box classes="top6 top8Md">
+                <StatList stats={stats} />
               </Box>
-            </Box>
-          </div>
-          <Box classes="top6 top8Md">
-            <StatList stats={stats} />
+            </div>
           </Box>
         </Container>
       </Layout>
