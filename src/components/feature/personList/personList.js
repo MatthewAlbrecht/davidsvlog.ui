@@ -5,8 +5,8 @@ import { Link } from 'gatsby'
 import PersonImage from 'src/components/feature/personImage/personImage'
 import { Txt, Box } from 'src/components/base/base'
 
-const PersonList = props => {
-  const { people } = props
+const PersonList = ({ people }) => {
+  if (!people) return null;
 
   return (
     <ul className="personList">
